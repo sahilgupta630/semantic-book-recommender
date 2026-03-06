@@ -1,7 +1,5 @@
 # 📚 Semantic Book Recommender
 
-![App Banner](https://via.placeholder.com/1000x300/1e1e2d/6366f1?text=Semantic+Book+Recommender)
-
 A sleek, robust, and modern ML machine-learning web application that dynamically recommends books using Collaborative Filtering. This project allows users to browse a dynamically generated wall of the **Top 50 Most Popular Books** based on aggregate rating metrics and then individually discover **intelligent recommendations** for any book they love based on cosine similarities calculated across thousands of user profiles.
 
 ## ✨ Features

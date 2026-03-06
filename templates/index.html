@@ -1,24 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Book Recommender System</title>
     <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <style>
-    .text-white{
-        color:white
+    .text-white {
+        color: white
     }
 </style>
+
 <body style="background-color:black">
 
-    <nav class="navbar" style="background-color:#00a65a">
-        <a class="navbar-brand">My Book recommender</a>
-        <ul class="nav navbar-nav">
-            <li><a href="/">Home</a></li>
-            <li><a href="/recommend">Recommend</a></li>
-            <li><a>Contact</a></li>
+    <nav
+        style="background: linear-gradient(135deg, #1f1f2e 0%, #303046 100%); padding: 20px 50px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5); border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+        <a href="/"
+            style="color: #ffffff; font-size: 28px; font-weight: 800; text-decoration: none; letter-spacing: 1.5px;">📚
+            BookRecs</a>
+        <ul style="list-style: none; display: flex; gap: 40px; margin: 0; padding: 0;">
+            <li><a href="/"
+                    style="color: #d1d1e0; text-decoration: none; font-size: 16px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s ease;"
+                    onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#d1d1e0'">Home</a></li>
+            <li><a href="/recommend"
+                    style="color: #d1d1e0; text-decoration: none; font-size: 16px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s ease;"
+                    onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#d1d1e0'">Recommend</a></li>
+            <li><a href="#"
+                    style="color: #d1d1e0; text-decoration: none; font-size: 16px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s ease;"
+                    onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#d1d1e0'">Contact</a></li>
         </ul>
     </nav>
 
@@ -29,17 +41,17 @@
             </div>
 
             {% for i in range(book_name|length) %}
-                <div class="col-md-3" style="margin-top:50px">
-                    <div class="card">
-                        <div class="card-body">
-                            <img class="card-img-top" src="{{ image[i] }}">
-                            <p class="text-white">{{ book_name[i] }}</p>
-                            <h4 class="text-white">{{ author[i] }}</h4>
-                            <h4 class="text-white">Votes - {{ votes[i] }}</h4>
-                            <h4 class="text-white">Rating - {{ rating[i] }}</h4>
-                        </div>
+            <div class="col-md-3" style="margin-top:50px">
+                <div class="card">
+                    <div class="card-body">
+                        <img class="card-img-top" src="{{ image[i] }}">
+                        <p class="text-white">{{ book_name[i] }}</p>
+                        <h4 class="text-white">{{ author[i] }}</h4>
+                        <h4 class="text-white">Votes - {{ votes[i] }}</h4>
+                        <h4 class="text-white">Rating - {{ rating[i] }}</h4>
                     </div>
                 </div>
+            </div>
             {% endfor %}
 
 
@@ -47,4 +59,5 @@
     </div>
 
 </body>
+
 </html>

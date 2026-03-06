@@ -47,5 +47,9 @@ def recommend():
 
     return render_template('recommend.html',data=data)
 
+@app.route('/contact')
+def contact_ui():
+    return render_template('contact.html')
+
 if __name__ == '__main__':
     app.run(debug=True)

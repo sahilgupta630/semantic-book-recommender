@@ -12,9 +12,9 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     return render_template('index.html',
-                           book_name = list(popular_df['Book-Title'].values),
+                           book_name=list(popular_df['Book-Title'].values),
                            author=list(popular_df['Book-Author'].values),
-                           image=list(popular_df['Image-URL-M'].values),
+                           image=[str(url).replace('MZZZZZZZ.jpg', 'LZZZZZZZ.jpg') for url in popular_df['Image-URL-M'].values],
                            votes=list(popular_df['num_ratings'].values),
                            rating=list(popular_df['avg_rating'].values)
                            )
@@ -39,7 +39,7 @@ def recommend():
         temp_df = books[books['Book-Title'] == pt.index[i[0]]]
         item.extend(list(temp_df.drop_duplicates('Book-Title')['Book-Title'].values))
         item.extend(list(temp_df.drop_duplicates('Book-Title')['Book-Author'].values))
-        item.extend(list(temp_df.drop_duplicates('Book-Title')['Image-URL-M'].values))
+        item.extend(list(temp_df.drop_duplicates('Book-Title')['Image-URL-L'].values))
 
         data.append(item)
 

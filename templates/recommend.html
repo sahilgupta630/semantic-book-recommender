@@ -133,8 +133,8 @@
     </nav>
 
     <div class="container">
-        <div class="row">
-            <div class="col-md-12">
+        <div class="row" style="display: flex; flex-wrap: wrap;">
+            <div class="col-md-12" style="width: 100%;">
                 <h1 class="text-white"
                     style="font-size:46px; font-weight: 800; margin-bottom: 30px; letter-spacing: -1px;">Discover Your
                     Next Favorite Book</h1>
@@ -155,9 +155,11 @@
             {% if data %}
 
             {% for i in data %}
-            <div class="col-md-3" style="margin-top:20px; margin-bottom: 30px;">
-                <div class="custom-card">
-                    <img src="{{i[2]}}" alt="Book Cover">
+            <div class="col-md-3" style="margin-top:20px; margin-bottom: 30px; display: flex;">
+                <div class="custom-card" style="width: 100%;">
+                    <img src="{{i[2]}}" alt="Book {{i[0]}}"
+                        onerror="this.onerror=null;this.src='https://via.placeholder.com/300x400/1e1e2d/ffffff?text=No+Cover';"
+                        onload="if(this.naturalWidth <= 1) this.src='https://via.placeholder.com/300x400/1e1e2d/ffffff?text=No+Cover';">
                     <div class="custom-card-body">
                         <div class="book-title" title="{{i[0]}}">{{i[0]}}</div>
                         <div class="book-author">{{i[1]}}</div>

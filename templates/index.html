@@ -121,15 +121,17 @@
     </nav>
 
     <div class="container">
-        <div class="row">
-            <div class="col-md-12">
+        <div class="row" style="display: flex; flex-wrap: wrap;">
+            <div class="col-md-12" style="width: 100%;">
                 <h1 class="text-white" style="font-size:50px">Top 50 Books</h1>
             </div>
 
             {% for i in range(book_name|length) %}
-            <div class="col-md-3" style="margin-top:40px; margin-bottom: 20px;">
-                <div class="custom-card">
-                    <img src="{{ image[i] }}" alt="Book Cover">
+            <div class="col-md-3" style="margin-top:40px; margin-bottom: 20px; display: flex;">
+                <div class="custom-card" style="width: 100%;">
+                    <img src="{{ image[i] }}" alt="Book {{ book_name[i] }}"
+                        onerror="this.onerror=null;this.src='https://via.placeholder.com/300x400/1e1e2d/ffffff?text=No+Cover';"
+                        onload="if(this.naturalWidth <= 1) this.src='https://via.placeholder.com/300x400/1e1e2d/ffffff?text=No+Cover';">
                     <div class="custom-card-body">
                         <div class="book-title" title="{{ book_name[i] }}">{{ book_name[i] }}</div>
                         <div class="book-author">{{ author[i] }}</div>
